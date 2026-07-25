@@ -19,7 +19,7 @@ export function Navbar() {
           to="/"
           className="text-lg font-black tracking-tight text-neutral-900"
         >
-          MORRISON<span className="text-neutral-500">.</span>
+          K.LEO
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">

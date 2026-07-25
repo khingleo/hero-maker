@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import designerAsset from "@/assets/designer.png.asset.json";
 import { Typewriter } from "@/components/Typewriter";

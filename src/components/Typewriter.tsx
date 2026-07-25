@@ -14,7 +14,7 @@ export function Typewriter({
   typingSpeed = 90,
   deletingSpeed = 45,
   pauseDuration = 2200,
-  loop = true,
+  loop = false,
   className = "",
 }: TypewriterProps) {
   const [mounted, setMounted] = useState(false);

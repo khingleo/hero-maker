@@ -67,7 +67,7 @@ function Index() {
               letterSpacing: "-0.03em",
             }}
           >
-            <Typewriter text="Do you need a Designer.?" />
+            <Typewriter text="Do you need a Designer.?" loop={false} />
           </h1>
 
           <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">

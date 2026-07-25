@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import designerAsset from "@/assets/designer.png.asset.json";
+import { Typewriter } from "@/components/Typewriter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -77,18 +78,15 @@ function Index() {
 
         {/* Text content */}
         <div className="relative z-10 pb-16 md:pb-0 md:pt-40">
-          <p className="text-xl font-medium text-neutral-800 md:text-2xl">
-            Do you need a
-          </p>
           <h1
-            className="mt-1 font-black tracking-tight text-neutral-900"
+            className="font-black tracking-tight text-neutral-900"
             style={{
               fontSize: "clamp(3.5rem, 8vw, 6.5rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
             }}
           >
-            Designer?
+            <Typewriter text="Do you need a Designer.?" />
           </h1>
 
           <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">

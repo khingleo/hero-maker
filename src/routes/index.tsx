@@ -1,24 +1,117 @@
 import { createFileRoute } from "@tanstack/react-router";
+import designerAsset from "@/assets/designer.png.asset.json";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Do you need a Designer? — Morrison Dzata" },
+      {
+        name: "description",
+        content:
+          "Graphic, logo, UI/UX and packaging design by Morrison Dzata. Anything design — if I can't, I'll find someone. But I know I can.",
+      },
+      { property: "og:title", content: "Do you need a Designer? — Morrison Dzata" },
+      {
+        property: "og:description",
+        content:
+          "Graphic, logo, UI/UX and packaging design by Morrison Dzata.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+function Service({ label }: { label: string }) {
+  return (
+    <div className="flex items-start gap-2">
+      <span aria-hidden className="mt-0.5 text-base leading-none">👉</span>
+      <div className="text-[13px] leading-tight tracking-wide text-neutral-800">
+        <div className="uppercase">{label.split(" ")[0]}</div>
+        <div className="font-extrabold uppercase">
+          {label.split(" ").slice(1).join(" ")}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
+    <section
+      className="relative min-h-screen w-full overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(135deg, #efece2 0%, #e8e4d6 45%, #dcd6c2 100%)",
+      }}
     >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+      {/* Faint background wordmark */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 flex justify-center"
+      >
+        <span
+          className="select-none font-black uppercase tracking-tight text-white/50"
+          style={{
+            fontSize: "clamp(6rem, 18vw, 18rem)",
+            letterSpacing: "0.02em",
+            lineHeight: 1,
+            marginTop: "-0.15em",
+            mixBlendMode: "screen",
+          }}
+        >
+          DZATA
+        </span>
+      </div>
+
+      <div className="relative mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-end gap-8 px-6 md:grid-cols-2 md:items-center md:px-10">
+        {/* Character */}
+        <div className="relative flex h-full items-end justify-center md:justify-start">
+          <img
+            src={designerAsset.url}
+            alt="3D illustrated designer character"
+            className="h-auto w-[520px] max-w-full object-contain drop-shadow-2xl md:w-[620px] lg:w-[720px]"
+          />
+        </div>
+
+        {/* Text content */}
+        <div className="relative z-10 pb-16 md:pb-0 md:pt-40">
+          <p className="text-xl font-medium text-neutral-800 md:text-2xl">
+            Do you need a
+          </p>
+          <h1
+            className="mt-1 font-black tracking-tight text-neutral-900"
+            style={{
+              fontSize: "clamp(3.5rem, 8vw, 6.5rem)",
+              lineHeight: 0.95,
+              letterSpacing: "-0.03em",
+            }}
+          >
+            Designer?
+          </h1>
+
+          <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
+            <Service label="Graphic Design" />
+            <Service label="Logo Design" />
+            <Service label="UI/UX Design" />
+            <Service label="Packaging Design" />
+          </div>
+
+          <p className="mt-10 max-w-md text-[15px] leading-relaxed text-neutral-800">
+            Anything <span className="font-bold">Design</span> if I can't, I
+            will find someone.
+            <br />
+            But I know <span className="font-bold">I can.</span>{" "}
+            <span aria-hidden>😎</span>
+          </p>
+        </div>
+      </div>
+
+      {/* Signature */}
+      <div className="absolute bottom-4 right-6 text-xs text-neutral-500 md:bottom-6 md:right-10 md:text-sm">
+        Created by <span className="font-semibold text-neutral-800">Morrison Dzata</span>
+      </div>
+    </section>
   );
 }

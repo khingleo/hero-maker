@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import designerAsset from "@/assets/designer.png.asset.json";
 import { Typewriter } from "@/components/Typewriter";
@@ -40,13 +39,6 @@ function Service({ label }: { label: string }) {
 }
 
 function Index() {
-  const [isBlinking, setIsBlinking] = useState(false);
-
-  const triggerBlink = () => {
-    setIsBlinking(true);
-    setTimeout(() => setIsBlinking(false), 250);
-  };
-
   return (
     <section
       className="relative min-h-screen w-full overflow-hidden pt-24 md:pt-28"
@@ -58,21 +50,11 @@ function Index() {
       <div className="relative mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-end gap-8 px-6 md:grid-cols-2 md:items-center md:px-10">
         {/* Character */}
         <div className="relative flex h-full items-center justify-center md:justify-start">
-          <button
-            type="button"
-            onClick={triggerBlink}
-            onMouseEnter={triggerBlink}
-            className="cursor-pointer appearance-none border-0 bg-transparent p-0"
-            aria-label="Designer portrait - click or hover to blink"
-          >
-            <img
-              src={designerAsset.url}
-              alt="3D illustrated designer portrait"
-              className={`h-auto max-h-[70vh] w-auto max-w-full object-contain drop-shadow-2xl transition-transform duration-200 hover:scale-[1.02] ${
-                isBlinking ? "animate-blink" : ""
-              }`}
-            />
-          </button>
+          <img
+            src={designerAsset.url}
+            alt="3D illustrated designer portrait"
+            className="h-auto max-h-[70vh] w-auto max-w-full object-contain drop-shadow-2xl"
+          />
         </div>
 
         {/* Text content */}

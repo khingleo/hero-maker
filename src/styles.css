@@ -142,21 +142,3 @@
     color: var(--color-foreground);
   }
 }
-
-@keyframes blink-squint {
-  0%,
-  100% {
-    transform: scaleY(1);
-  }
-  45% {
-    transform: scaleY(0.92);
-  }
-  55% {
-    transform: scaleY(0.92);
-  }
-}
-
-.animate-blink {
-  animation: blink-squint 0.25s ease-in-out;
-  transform-origin: center 35%;
-}

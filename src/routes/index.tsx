@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import designerAsset from "@/assets/designer.png.asset.json";
 import { Typewriter } from "@/components/Typewriter";
+import { BlinkingPortrait } from "@/components/BlinkingPortrait";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,10 +51,9 @@ function Index() {
       <div className="relative mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-end gap-8 px-6 md:grid-cols-2 md:items-center md:px-10">
         {/* Character */}
         <div className="relative flex h-full items-center justify-center md:justify-start">
-          <img
+          <BlinkingPortrait
             src={designerAsset.url}
             alt="3D illustrated designer portrait"
-            className="h-auto max-h-[70vh] w-auto max-w-full object-contain drop-shadow-2xl"
           />
         </div>
 

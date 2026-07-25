@@ -67,11 +67,11 @@ function Index() {
 
       <div className="relative mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-end gap-8 px-6 md:grid-cols-2 md:items-center md:px-10">
         {/* Character */}
-        <div className="relative flex h-full items-end justify-center md:justify-start">
+        <div className="relative flex h-full items-center justify-center md:justify-start">
           <img
             src={designerAsset.url}
-            alt="3D illustrated designer character"
-            className="h-auto w-[520px] max-w-full object-contain drop-shadow-2xl md:w-[620px] lg:w-[720px]"
+            alt="3D illustrated designer portrait"
+            className="h-auto max-h-[70vh] w-auto max-w-full object-contain drop-shadow-2xl"
           />
         </div>
 

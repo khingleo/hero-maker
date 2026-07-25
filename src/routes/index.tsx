@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import designerAsset from "@/assets/designer.png.asset.json";
 import { Typewriter } from "@/components/Typewriter";
+import { BlinkingPortrait } from "@/components/BlinkingPortrait";
 
 export const Route = createFileRoute("/")({
   head: () => ({

@@ -41,7 +41,7 @@ function Service({ label }: { label: string }) {
 function Index() {
   return (
     <section
-      className="relative min-h-screen w-full overflow-hidden"
+      className="relative min-h-screen w-full overflow-hidden pt-24 md:pt-28"
       style={{
         background:
           "linear-gradient(135deg, #efece2 0%, #e8e4d6 45%, #dcd6c2 100%)",

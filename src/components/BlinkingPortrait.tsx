@@ -39,10 +39,10 @@ export function BlinkingPortrait({ src, alt, className = "" }: BlinkingPortraitP
         key={`left-${blinkKey}`}
         className="pointer-events-none absolute origin-top rounded-full animate-blink-eyelid"
         style={{
-          left: "34%",
-          top: "42%",
-          width: "12%",
-          height: "9%",
+          left: "35%",
+          top: "32%",
+          width: "9%",
+          height: "4%",
           background: "linear-gradient(180deg, #8a5a42 0%, #5c3626 100%)",
           boxShadow: "0 1px 3px rgba(0,0,0,0.25)",
         }}
@@ -52,10 +52,10 @@ export function BlinkingPortrait({ src, alt, className = "" }: BlinkingPortraitP
         key={`right-${blinkKey}`}
         className="pointer-events-none absolute origin-top rounded-full animate-blink-eyelid"
         style={{
-          left: "52%",
-          top: "42%",
-          width: "12%",
-          height: "9%",
+          left: "53%",
+          top: "32%",
+          width: "9%",
+          height: "4%",
           background: "linear-gradient(180deg, #8a5a42 0%, #5c3626 100%)",
           boxShadow: "0 1px 3px rgba(0,0,0,0.25)",
         }}

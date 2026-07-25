@@ -37,27 +37,27 @@ export function BlinkingPortrait({ src, alt, className = "" }: BlinkingPortraitP
       {/* Left eyelid overlay */}
       <span
         key={`left-${blinkKey}`}
-        className="pointer-events-none absolute origin-top rounded-full animate-blink-eyelid"
+        className="pointer-events-none absolute origin-center rounded-full animate-blink-eyelid"
         style={{
-          left: "35%",
-          top: "32%",
-          width: "9%",
-          height: "4%",
-          background: "linear-gradient(180deg, #8a5a42 0%, #5c3626 100%)",
-          boxShadow: "0 1px 3px rgba(0,0,0,0.25)",
+          left: "36%",
+          top: "33.5%",
+          width: "8%",
+          height: "2%",
+          background: "linear-gradient(180deg, #6b3d2b 0%, #4a2a1d 100%)",
+          boxShadow: "0 1px 2px rgba(0,0,0,0.3)",
         }}
       />
       {/* Right eyelid overlay */}
       <span
         key={`right-${blinkKey}`}
-        className="pointer-events-none absolute origin-top rounded-full animate-blink-eyelid"
+        className="pointer-events-none absolute origin-center rounded-full animate-blink-eyelid"
         style={{
-          left: "53%",
-          top: "32%",
-          width: "9%",
-          height: "4%",
-          background: "linear-gradient(180deg, #8a5a42 0%, #5c3626 100%)",
-          boxShadow: "0 1px 3px rgba(0,0,0,0.25)",
+          left: "54%",
+          top: "33.5%",
+          width: "8%",
+          height: "2%",
+          background: "linear-gradient(180deg, #6b3d2b 0%, #4a2a1d 100%)",
+          boxShadow: "0 1px 2px rgba(0,0,0,0.3)",
         }}
       />
     </div>

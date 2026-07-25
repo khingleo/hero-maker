@@ -47,25 +47,6 @@ function Index() {
           "linear-gradient(135deg, #efece2 0%, #e8e4d6 45%, #dcd6c2 100%)",
       }}
     >
-      {/* Faint background wordmark */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 flex justify-center"
-      >
-        <span
-          className="select-none font-black uppercase tracking-tight text-white/50"
-          style={{
-            fontSize: "clamp(6rem, 18vw, 18rem)",
-            letterSpacing: "0.02em",
-            lineHeight: 1,
-            marginTop: "-0.15em",
-            mixBlendMode: "screen",
-          }}
-        >
-          DZATA
-        </span>
-      </div>
-
       <div className="relative mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-end gap-8 px-6 md:grid-cols-2 md:items-center md:px-10">
         {/* Character */}
         <div className="relative flex h-full items-center justify-center md:justify-start">

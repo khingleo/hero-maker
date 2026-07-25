@@ -2,9 +2,9 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
 const navLinks = [
-  { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
+  { to: "/portfolio", label: "Projects" },
 ];
 
 export function Navbar() {
@@ -37,7 +37,7 @@ export function Navbar() {
         </ul>
 
         <Link
-          to="/contact"
+          to="/hire-me"
           className="hidden rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-neutral-800 md:inline-flex"
         >
           Hire Me
@@ -83,7 +83,7 @@ export function Navbar() {
             ))}
             <li className="pt-2">
               <Link
-                to="/contact"
+                to="/hire-me"
                 onClick={() => setIsOpen(false)}
                 className="inline-flex rounded-full bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-neutral-800"
               >

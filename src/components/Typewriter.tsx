@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 
 interface TypewriterProps {
-  text: string;
+  /** Single string (legacy) */
+  text?: string;
+  /** Array of strings to cycle through */
+  texts?: string[];
   typingSpeed?: number;
   deletingSpeed?: number;
   pauseDuration?: number;
@@ -11,15 +14,19 @@ interface TypewriterProps {
 
 export function Typewriter({
   text,
-  typingSpeed = 90,
-  deletingSpeed = 45,
-  pauseDuration = 2200,
+  texts,
+  typingSpeed = 80,
+  deletingSpeed = 40,
+  pauseDuration = 1800,
   loop = false,
   className = "",
 }: TypewriterProps) {
+  const items = texts ?? (text ? [text] : [""]);
+
   const [mounted, setMounted] = useState(false);
   const [displayed, setDisplayed] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     setMounted(true);
@@ -28,9 +35,11 @@ export function Typewriter({
   useEffect(() => {
     if (!mounted) return;
 
+    const current = items[index];
+
     const delay = isDeleting
       ? deletingSpeed
-      : displayed === text
+      : displayed === current
         ? pauseDuration
         : typingSpeed;
 
@@ -38,14 +47,17 @@ export function Typewriter({
       if (isDeleting) {
         if (displayed === "") {
           setIsDeleting(false);
+          setIndex((prev) => (prev + 1) % items.length);
         } else {
-          setDisplayed(displayed.slice(0, -1));
+          setDisplayed((prev) => prev.slice(0, -1));
         }
       } else {
-        if (displayed === text) {
-          if (loop) setIsDeleting(true);
+        if (displayed === current) {
+          if (loop || items.length > 1) {
+            setIsDeleting(true);
+          }
         } else {
-          setDisplayed(text.slice(0, displayed.length + 1));
+          setDisplayed(current.slice(0, displayed.length + 1));
         }
       }
     }, delay);
@@ -54,9 +66,10 @@ export function Typewriter({
   }, [
     displayed,
     isDeleting,
+    index,
+    items,
     loop,
     mounted,
-    text,
     typingSpeed,
     deletingSpeed,
     pauseDuration,
@@ -64,9 +77,9 @@ export function Typewriter({
 
   return (
     <span className={className}>
-      {mounted ? displayed : text}
+      {mounted ? displayed : items[0]}
       <span
-        className="ml-1 inline-block h-[0.85em] w-[2px] translate-y-[0.05em] bg-current animate-pulse"
+        className="ml-1 inline-block h-[0.85em] w-[3px] translate-y-[0.05em] bg-current animate-pulse"
         aria-hidden="true"
       />
     </span>

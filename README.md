@@ -2,8 +2,6 @@
 
 This project was built with K.LEO.
 
-## Build with Lovable
-
 
 ## Development
 
